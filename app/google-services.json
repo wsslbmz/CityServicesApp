@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "642344624957",
+    "firebase_url": "https://cityservicesapp.firebaseio.com",
+    "project_id": "cityservicesapp",
+    "storage_bucket": "cityservicesapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642344624957:android:56160f25288906e1",
+        "android_client_info": {
+          "package_name": "com.example.wsslmac.cityservicesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642344624957-e0rsjt8a068kq472ose9rprt4ak80au8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wsslmac.cityservicesapp",
+            "certificate_hash": "61E788069BADDF8648CDD9C349CDF90C1DE91731"
+          }
+        },
+        {
+          "client_id": "642344624957-6hh0breoatobfqks2bcfp2dha8i4l5b4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG_Uexs0uzwUAXuL5A5Et9gK1f18CDzTg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642344624957-6hh0breoatobfqks2bcfp2dha8i4l5b4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
