@@ -6,9 +6,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="lien1">J'ai pas un compte !</string>
-    <string name="lien2">J'ai deja un compte !</string>
+    <string name="logout">Deconnecter</string>
+    <string name="lien1">J\'ai pas un compte !</string>
+    <string name="lien2">J\'ai deja un compte !</string>
     <string name="btn1">Se connecter</string>
-    <string name="btn2">s'inscrire</string>
+    <string name="btn2">s\'inscrire</string>
 
 </resources>

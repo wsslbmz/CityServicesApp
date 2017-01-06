@@ -109,16 +109,16 @@ public class Signup extends AppCompatActivity {
         progressDialog.setMessage("veuillez patienter svp ...");
         progressDialog.show();
 
-
         mAuth.createUserWithEmailAndPassword(email, password)
+
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            mdataRef.setValue("name :",pseudo);
-                            mdataRef.setValue("email :",email);
-                            mdataRef.setValue("pass :",password);
+                            mdataRef.push().setValue("name :",pseudo);
+                            mdataRef.push().setValue("email :",email);
+                            mdataRef.push().setValue("pass :",password);
                             Toast.makeText(Signup.this, "\n" + "Enregistré avec succès", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(Signup.this, Main.class));
                         }
