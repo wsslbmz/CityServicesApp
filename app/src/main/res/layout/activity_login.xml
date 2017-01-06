@@ -81,7 +81,7 @@
         <!--android:layout_alignParentStart="true" />-->
 
         <Button
-            android:id="@+id/btnSingup"
+            android:id="@+id/btnSingin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -97,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btngoogle"
-            android:layout_below="@+id/btnSingup"
+            android:layout_below="@+id/btnSingin"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
 

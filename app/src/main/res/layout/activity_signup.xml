@@ -87,11 +87,11 @@
 
 
         <Button
-            android:id="@+id/btnSingup"
+            android:id="@+id/btnSingin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="@string/btn1"
+            android:text="@string/btn2"
             android:textColor="#000000"
             android:background="@color/colorAccent"
             android:layout_below="@+id/etPass"

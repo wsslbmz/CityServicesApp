@@ -4,8 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -15,13 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 //import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -31,6 +27,7 @@ public class Signup extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseDatabase mdata;
     private DatabaseReference mdataRef;
+    private FirebaseUser mUser;
     private static String TAG = "signup";
 
     private FirebaseUser user;
@@ -49,7 +46,7 @@ public class Signup extends AppCompatActivity {
         etPseudo = (EditText) findViewById(R.id.etPseudo);
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPass = (EditText) findViewById(R.id.etPass);
-        btnSignup = (Button) findViewById(R.id.btnSingup);
+        btnSignup = (Button) findViewById(R.id.btnSingin);
         gotosignin = (TextView) findViewById(R.id.gotosignin);
         progressDialog = new ProgressDialog(this);
 
@@ -57,19 +54,18 @@ public class Signup extends AppCompatActivity {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                mUser = mAuth.getCurrentUser();
+                if (mUser != null) {
+                    Log.d(TAG, "onAuthStateChanged:signed_in:" + mUser.getUid());
                 } else {
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
                 // ...
             }
         };
-        user = mAuth.getCurrentUser();
 
         mdata = FirebaseDatabase.getInstance();
-        mdataRef = mdata.getReference().child("users").child(user.getUid());
+        mdataRef = mdata.getReference().child("users");
 
 
         gotosignin.setOnClickListener(new View.OnClickListener() {
@@ -119,12 +115,12 @@ public class Signup extends AppCompatActivity {
                             mdataRef.push().setValue("name :",pseudo);
                             mdataRef.push().setValue("email :",email);
                             mdataRef.push().setValue("pass :",password);
-                            Toast.makeText(Signup.this, "\n" + "Enregistré avec succès", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Signup.this,  "Enregistré avec succès", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(Signup.this, Main.class));
                         }
                         else
                         {
-                            Toast.makeText(Signup.this, "\n" + "Erreur d'enregistrement", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Signup.this, "Erreur d'enregistrement", Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }

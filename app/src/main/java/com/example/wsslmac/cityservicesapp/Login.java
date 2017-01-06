@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -60,8 +58,9 @@ public class Login extends AppCompatActivity {
 
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPass = (EditText) findViewById(R.id.etPass);
-        btnSignin = (Button) findViewById(R.id.btnSingup);
+        btnSignin = (Button) findViewById(R.id.btnSingin);
         gotosignup = (TextView) findViewById(R.id.gotosignup);
+        btngoogle = (SignInButton) findViewById(R.id.btngoogle);
         progressDialog = new ProgressDialog(this);
 
         mAuth = FirebaseAuth.getInstance();
@@ -171,6 +170,13 @@ public class Login extends AppCompatActivity {
                             Log.w(TAG2, "signInWithCredential", task.getException());
                             Toast.makeText(Login.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(Login.this, "Authentication ok.",
+                                    Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Login.this, Main.class));
+                            finish();
                         }
                         progressDialog.dismiss();
 
